@@ -36,5 +36,5 @@ services:
       - api_80s_net
 
 networks:
-  store_manager_net:
+  api_80s_net:
     driver: bridge
