@@ -1,3 +1,4 @@
+-- Active: 1694557084551@@127.0.0.1@3306
 USE `80sClassics`;
 
 SET FOREIGN_KEY_CHECKS = 0;
@@ -6,12 +7,12 @@ TRUNCATE TABLE `movies`;
 TRUNCATE TABLE `users`;
 TRUNCATE TABLE `users_favorites`;
 
-INSERT INTO 80sClassics.movies (name) VALUES
+INSERT INTO 80sClassics.movies (title) VALUES
     ("De Volta Para o Futuro"),
     ("Top Gun - Ases Indomáveis"), 
-    ("Curtindo a Vida Adoidado"),
+    ("Curtindo a Vida Adoidado");
 
-INSERT INTO 80sClassics.users (name) VALUES
+INSERT INTO 80sClassics.users (username) VALUES
     ("Marty McFly"),
     ("Maverick"),
     ("Ferris Bueller");
