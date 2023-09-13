@@ -11,17 +11,17 @@ CREATE TABLE movies (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE users (
+CREATE TABLE genres (
     id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE users_favorites (
-    user_id INT NOT NULL,
+CREATE TABLE movie_genres (
+    genre_id INT NOT NULL,
     movie_id INT NOT NULL,
-    PRIMARY KEY (user_id, movie_id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    PRIMARY KEY (genre_id, movie_id),
+    FOREIGN KEY (genre_id) REFERENCES genres(id),
     FOREIGN KEY (movie_id) REFERENCES movies(id)
 ) ENGINE=InnoDB;
 

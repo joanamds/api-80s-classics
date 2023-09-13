@@ -4,21 +4,20 @@ USE `80sClassics`;
 SET FOREIGN_KEY_CHECKS = 0;
 
 TRUNCATE TABLE `movies`;
-TRUNCATE TABLE `users`;
-TRUNCATE TABLE `users_favorites`;
+TRUNCATE TABLE `genres`;
+TRUNCATE TABLE `movie_genres`;
 
 INSERT INTO 80sClassics.movies (title) VALUES
     ("De Volta Para o Futuro"),
     ("Top Gun - Ases Indomáveis"), 
     ("Curtindo a Vida Adoidado");
 
-INSERT INTO 80sClassics.users (username) VALUES
-    ("Marty McFly"),
-    ("Maverick"),
-    ("Ferris Bueller");
+INSERT INTO 80sClassics.genres (name) VALUES
+    ("Ficção Científica"),
+    ("Ação"),
+    ("Comédia");
 
-INSERT INTO 80sClassics.users_favorites (user_id, movie_id) VALUES
+INSERT INTO 80sClassics.movie_genres (genre_id, movie_id) VALUES
     (1, 1),
-    (1, 2),
     (2, 2),
     (3, 3);
