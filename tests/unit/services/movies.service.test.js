@@ -55,14 +55,24 @@ describe('Teste de unidade do service de Filmes', function () {
       expect(result.message).to.deep.equal();
     });
   });
-  it('Verifica se atualiza o filme com sucesso', async function () {
-    sinon.stub(moviesModel, 'updateMovieById').resolves(movieUpdated);
-
-    const result = await moviesService.updateById(1);
-
-    expect(result.type).to.be.null;
-    expect(result.message).to.deep.equal(movieUpdated);
-  });
+  describe('Verifica se é possível atualizar um filme', function () {
+    it('Verifica se atualiza o filme com sucesso', async function () {
+      sinon.stub(moviesModel, 'updateMovieById').resolves(movieUpdated);
+  
+      const result = await moviesService.updateById(2, { title: "Os Goonies"});
+  
+      expect(result.type).to.equal('MOVIE_NOT_FOUND');
+      expect(result.message).to.deep.equal();
+    });
+    it('Verifica se não atualiza o filme com id inválido', async function () {
+      sinon.stub(moviesModel, 'updateMovieById').resolves(movieUpdated);
+  
+      const result = await moviesService.updateById(5, { title: "Os Goonies"});
+  
+      expect(result.type).to.be.null;
+      expect(result.message).to.deep.equal({ message: 'Filme não encontrado'});
+    });
+  })
   describe('Verifica se é possível criar um filme', function() {
     it('Deve retornar a criação do filme', async function () {
       sinon.stub(moviesModel, 'insertMovie').resolves(4)
