@@ -1,6 +1,7 @@
 # API 80s Classics
 
-![1980s-80s](https://github.com/joanamds/api-80s-classics/assets/106452876/4a2948cd-8e8b-456f-b911-9f5be2a8914c)
+![1980s-80s](https://github.com/joanamds/api-80s-classics/assets/106452876/d73ec80d-e7cb-4d34-88ba-b4a76e0aeb05)
+
 
 É uma API que faz o CRUD de filmes clássicos dos anos 80 aplicando a Arquitetura MSC (Model Service Controller)
 
