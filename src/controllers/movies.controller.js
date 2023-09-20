@@ -30,7 +30,7 @@ const updateById = async (req, res) => {
   const { type, message } = await moviesService.updateById(id, movie);
   if(type) return res.status(errorMap.mapError(type)).json(message);
 
-  return res.status(200).json(message[0]);
+  return res.status(200).json(message);
 }
 
 const deleteMovieById = async (req, res) => {
