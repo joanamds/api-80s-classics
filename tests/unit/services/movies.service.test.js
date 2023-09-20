@@ -61,15 +61,15 @@ describe('Teste de unidade do service de Filmes', function () {
   
       const result = await moviesService.updateById(2, { title: "Os Goonies"});
   
-      expect(result.type).to.equal('MOVIE_NOT_FOUND');
-      expect(result.message).to.deep.equal();
+      expect(result.type).to.be.null;
+      expect(result.message).to.deep.equal(movieUpdated);
     });
     it('Verifica se não atualiza o filme com id inválido', async function () {
       sinon.stub(moviesModel, 'updateMovieById').resolves(movieUpdated);
   
       const result = await moviesService.updateById(5, { title: "Os Goonies"});
   
-      expect(result.type).to.be.null;
+      expect(result.type).to.equal('MOVIE_NOT_FOUND');
       expect(result.message).to.deep.equal({ message: 'Filme não encontrado'});
     });
   })
